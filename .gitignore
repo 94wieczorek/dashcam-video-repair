@@ -35,6 +35,9 @@ x86/
 ffmpeg/
 untrunc_x64/
 *.7z
+*.zip
+*.md
+*.kiro
 
 ## App config (generated at runtime)
 config.json
