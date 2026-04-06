@@ -1,0 +1,72 @@
+<Window x:Class="DashcamVideoRepair.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ustawienia"
+        Height="240" Width="560"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#1E1E1E">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#E0E0E0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#2D2D2D"/>
+            <Setter Property="Foreground" Value="#E0E0E0"/>
+            <Setter Property="BorderBrush" Value="#555555"/>
+            <Setter Property="Padding" Value="4,3"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="CaretBrush" Value="#E0E0E0"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#3C3C3C"/>
+            <Setter Property="Foreground" Value="#E0E0E0"/>
+            <Setter Property="BorderBrush" Value="#555555"/>
+            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Untrunc Path -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Ścieżka Untrunc:"/>
+            <TextBox Grid.Column="1" Text="{Binding UntruncPath, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,8,0"/>
+            <Button Grid.Column="2" Content="Przeglądaj..." Command="{Binding BrowseUntruncCommand}"/>
+        </Grid>
+
+        <!-- Reference File Path -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Plik referencyjny:"/>
+            <TextBox Grid.Column="1" Text="{Binding ReferenceFilePath, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,8,0"/>
+            <Button Grid.Column="2" Content="Przeglądaj..." Command="{Binding BrowseReferenceFileCommand}"/>
+        </Grid>
+
+        <!-- Save / Cancel -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Zapisz" Command="{Binding SaveCommand}" Width="80" Margin="0,0,8,0"/>
+            <Button Content="Anuluj" Command="{Binding CancelCommand}" Width="80"/>
+        </StackPanel>
+    </Grid>
+</Window>
