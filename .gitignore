@@ -1,0 +1,43 @@
+## .NET
+bin/
+obj/
+publish/
+
+## User-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS
+.vs/
+*.rsuser
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+## NuGet
+**/packages/
+*.nupkg
+**/project.lock.json
+**/project.fragment.lock.json
+
+## Video files
+*.MOV
+*.mov
+*.mp4
+*.MP4
+
+## External tools
+ffmpeg/
+untrunc_x64/
+*.7z
+
+## App config (generated at runtime)
+config.json
+
+## Logs
+logs/
